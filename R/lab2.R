@@ -11,6 +11,8 @@
 #' @examples
 #'boxplot_payment(DRG_data, 'Average Covered Charges')
 #'
+
+## Git repositories: https://github.com/Zhuoran-Li123/Lab2-Zhuoran.git
 boxplot_payment <- function(data, x) {
   # Determine the payments based on the selected columns
   if (x == 'Average Medicare Payments') {
