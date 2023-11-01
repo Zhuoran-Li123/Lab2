@@ -2,7 +2,7 @@
 #install package from the repository "BoxplotPackage"
 devtools::install_github("Zhuoran-Li123/Lab2", force = TRUE)
 # load the 'BoxplotPackage' package
-library(BoxplotPackage)
+library(lab2)
 # load the dataset "DRG_data" from the 'BoxplotPackage' package
 library(readr)
 DRG_data <- read_csv("data/DRG_data.csv")
