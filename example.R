@@ -1,6 +1,6 @@
 # add an example
 #install package from the repository "BoxplotPackage"
-devtools::install_github("Zhuoran-Li123/Lab2-Zhuoran", force = TRUE)
+devtools::install_github("Zhuoran-Li123/Lab2-Zhuoran", auth_token = "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", force = TRUE)
 # load the 'BoxplotPackage' package
 library(lab2)
 # load the dataset "DRG_data" from the 'BoxplotPackage' package
