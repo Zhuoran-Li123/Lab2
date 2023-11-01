@@ -1,9 +1,9 @@
 #' Boxplot of payments
 #'
-#' This function creates a boxplot for different kinds of payments by DRG_data.
+#' This function creates a boxplot for different kinds of average medicare payments by DRG_data.
 #'
 #' @param data A data frame "DRG_data. csv"
-#' @param x Three payments to plot: 'Average Medicare Payments', 'Average Total Payments', and 'Average Covered Charges'
+#' @param x Three average medicare payments to plot: 'Average Medicare Payments', 'Average Total Payments', and 'Average Covered Charges'
 #'
 #' @return A boxplot for different kinds of payments by DRG_data.
 #' @export
@@ -23,10 +23,12 @@ boxplot_payment <- function(data, x) {
     # Stop and display an error message for an invalid payment
     stop("Invalid payment type. Use 'Average Medicare Payments', 'Average Total Payments', or 'Average Covered Charges'.")
   }
-
+  DRG_data$`DRG Definition` <- substring(DRG_data$`DRG Definition`, 1, 3)
+  
   # Create a boxplot for the selected payment
-  boxplot(y, main = paste("Boxplot of", x), xlab = x, ylab = "money", col = "blue",ylim = c(0, max(y, na.rm = TRUE)))
+  boxplot(y~DRG_data$`DRG Definition`, main = paste("Boxplot of", x), xlab = "DRG_code", ylab = "Average Medicial Payment", col = "lightblue",ylim = c(0, max(y, na.rm = TRUE)),las = 2)
 }
+
 
 #' Statistics for average Medicare payments
 #'
